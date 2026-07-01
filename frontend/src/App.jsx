@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { googleLogout } from '@react-oauth/google'
 import Login from './Login.jsx'
 import './App.css'
 
@@ -15,6 +16,11 @@ function App() {
       .catch(() => setMessage('Error al conectar con el backend'))
   }, [user])
 
+  const handleLogout = () => {
+    googleLogout()
+    setUser(null)
+  }
+
   if (!user) {
     return <Login onLoginSuccess={setUser} />
   }
@@ -23,6 +29,7 @@ function App() {
     <div className="card">
       <p>Sesión iniciada como {user.name} ({user.email})</p>
       <h1>{message}</h1>
+      <button onClick={handleLogout}>Cerrar sesión</button>
     </div>
   )
 }
