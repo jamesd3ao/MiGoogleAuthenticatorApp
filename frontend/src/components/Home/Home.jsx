@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { googleLogout } from '@react-oauth/google'
 import { API_BASE_URL } from '../../config.js'
+import SettingsMenu from '../SettingsMenu/SettingsMenu.jsx'
 
 function Home({ user, onLogout }) {
   const [message, setMessage] = useState('Cargando...')
@@ -19,9 +20,9 @@ function Home({ user, onLogout }) {
 
   return (
     <div className="card">
+      <SettingsMenu onLogout={handleLogout} />
       <p>Sesión iniciada como {user.name} ({user.email})</p>
       <h1>{message}</h1>
-      <button onClick={handleLogout}>Cerrar sesión</button>
     </div>
   )
 }
