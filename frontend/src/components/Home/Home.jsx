@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { googleLogout } from '@react-oauth/google'
 import { API_BASE_URL } from '../../config.js'
-import SettingsMenu from '../SettingsMenu/SettingsMenu.jsx'
+import TopBar from '../TopBar/TopBar.jsx'
 
-function Home({ user, onLogout }) {
+function Home({ user, onLogout, theme, onToggleTheme }) {
   const [message, setMessage] = useState('Cargando...')
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function Home({ user, onLogout }) {
 
   return (
     <div className="card">
-      <SettingsMenu onLogout={handleLogout} />
+      <TopBar theme={theme} onToggleTheme={onToggleTheme} onLogout={handleLogout} />
       <p>Sesión iniciada como {user.name} ({user.email})</p>
       <h1>{message}</h1>
     </div>

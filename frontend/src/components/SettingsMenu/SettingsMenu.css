@@ -1,25 +1,5 @@
 .settings-menu {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-}
-
-.settings-menu__trigger {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid #3a3a3a;
-  background: #1a1a1a;
-  color: #e8e8e8;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.settings-menu__trigger:hover {
-  background: #2a2a2a;
+  position: relative;
 }
 
 .settings-menu__dropdown {
@@ -27,8 +7,8 @@
   top: 48px;
   right: 0;
   min-width: 170px;
-  background: #242424;
-  border: 1px solid #3a3a3a;
+  background: var(--color-dropdown-bg);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 0.25rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -43,27 +23,19 @@
   background: none;
   border: none;
   border-radius: 6px;
-  color: #e8e8e8;
+  color: var(--color-text);
   font-size: 0.9rem;
   text-align: left;
   cursor: pointer;
 }
 
 .settings-menu__item:hover {
-  background: #333;
+  background: var(--color-hover-bg);
 }
 
-.settings-menu__trigger svg,
 .settings-menu__item svg {
   width: 1em;
   height: 1em;
   flex-shrink: 0;
-}
-
-.settings-menu__trigger svg {
-  font-size: 20px;
-}
-
-.settings-menu__item svg {
   font-size: 18px;
 }
