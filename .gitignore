@@ -1,0 +1,14 @@
+# Backend (.NET)
+backend/bin/
+backend/obj/
+backend/.vs/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Frontend (Node)
+frontend/node_modules/
+frontend/dist/
+
+# OS / editor
+.DS_Store
